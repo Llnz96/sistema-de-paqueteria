@@ -3,7 +3,7 @@ from utilidades.centrar_ventana import centrar_interfaz
 from seguridad.validaciones import validar_bien
 from seguridad.bitacora import registrarEvento
 from dominio.bien import crea_bien
-from persistencia.manejador_bien_csv import guardar_bienes
+from persistencia.gestor_manejadores import guardar_bien
 
 def formulario_captura_bien(ventana: Tk) -> None:
     form_bien = Toplevel(ventana)
@@ -83,7 +83,7 @@ def registrar_bien(txt_id: Entry, txt_desc: Entry, txt_modelo: Entry, txt_valor:
     precio = float(valor)
 
     bien = crea_bien(id, desc, modelo, precio, estatus)
-    guardar_bienes(bien)
+    guardar_bien(bien, formato)
 
     messagebox.showinfo("Producto agregado", f"{desc} registrado correctamente.")
     registrarEvento(f"ha registrado el producto: ID: {id}, Desc: {desc}, Modelo: {modelo}, Valor: {valor}, Estatus: {estatus} satisfactoriamente.")
