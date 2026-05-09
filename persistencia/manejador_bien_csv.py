@@ -1,15 +1,12 @@
-import csv
+from csv import writer
 
-
-def guardar_bien(bien):
-
+def guardar_bienes(bien: dict) -> None:
     with open("bienes.csv", "a", newline="", encoding="utf-8") as archivo:
-        escritor = csv.writer(archivo)
+        escritor = writer(archivo)
         escritor.writerow([
             bien["id"],
             bien["descripcion"],
             bien["modelo"],
             bien["valor"],
             bien["estatus"]
-
-])
+        ])

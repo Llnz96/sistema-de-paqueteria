@@ -1,8 +1,10 @@
-import domain.bien as misbienes
-import ui.formulario_bien as formularios
-import persistencia.manejador_bien_json as driver
+from ui.menu_principal import menu
+from seguridad.bitacora import registrarEvento
 
-#formularios.captura_bien()
-b = misbienes.crea_bien(1,2,3,4,5)
-print(b)
-driver.guardar_bien(b)
+def mostrar_menu() -> None:
+    menu()
+
+if __name__ == "__main__":
+    registrarEvento("ha iniciado el sistema.")
+    mostrar_menu()
+    registrarEvento("ha salido de sistema")

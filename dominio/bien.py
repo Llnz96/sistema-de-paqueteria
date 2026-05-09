@@ -1,10 +1,4 @@
-def crea_bien(
-    id,
-    descripcion,
-    modelo,
-    valor,
-    estatus
-):
+def crea_bien(id: str, descripcion: str, modelo: str, valor: float, estatus: str) -> dict:
     dict_bien={
         "id": id,
         "descripcion": descripcion,
@@ -13,4 +7,3 @@ def crea_bien(
         "estatus": estatus
     }
     return dict_bien
-
