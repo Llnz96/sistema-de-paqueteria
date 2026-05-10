@@ -2,6 +2,8 @@ from tkinter import Tk, Label, Button
 from utilidades.centrar_ventana import centrar_interfaz
 from utilidades.saludo import obtener_saludo
 from .formulario_bien import formulario_captura_bien
+from .formulario_cliente import formulario_captura_cliente
+from .formulario_direccion import formulario_captura_direccion
 from .interfaz_reporte import visualizar_reporte
 
 def menu() -> None:
@@ -17,10 +19,10 @@ def menu() -> None:
     etq_mensaje = Label(ventana, text="¿Qué operación desea realizar?", font=("Helvatica", 16))
     etq_mensaje.pack()
 
-    btn_cliente = Button(ventana, text="Registrar cliente")
+    btn_cliente = Button(ventana, text="Registrar cliente", command=lambda: formulario_registrar_cliente(ventana))
     btn_cliente.pack(pady=5)
 
-    btn_direccion = Button(ventana, text="Registrar direccion")
+    btn_direccion = Button(ventana, text="Registrar direccion", command=lambda: formulario_captura_direccion(ventana))
     btn_direccion.pack(pady=5)
         
     btn_bien = Button(ventana, text="Registrar bien", command=lambda: formulario_registrar_bien(ventana))
@@ -36,9 +38,11 @@ def menu() -> None:
 
 def formulario_registrar_cliente(ventana: Tk) -> None:
     ventana.withdraw()
+    formulario_captura_cliente(ventana)
 
 def formulario_registrar_direccion(ventana: Tk) -> None:
     ventana.withdraw()
+    formulario_captura_direccion(ventana)
 
 def formulario_registrar_bien(ventana: Tk) -> None:
     ventana.withdraw()

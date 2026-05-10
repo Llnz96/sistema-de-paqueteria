@@ -1,7 +1,7 @@
 from csv import writer, reader
 
-def guardar_direccion(direccion: dict) -> None:
-    with open("clientes.csv", "a", newline="", encoding="utf-8") as archivo:
+def guardar_direcciones(direccion: dict) -> None:
+    with open("direcciones.csv", "a", newline="", encoding="utf-8") as archivo:
         escritor = writer(archivo)
         escritor.writerow([
             direccion["id"],

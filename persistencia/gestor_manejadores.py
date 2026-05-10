@@ -3,7 +3,7 @@ from . import manejador_bien_json
 from . import manejador_cliente_csv
 from . import manejador_cliente_json
 from . import manejador_direccion_csv
-
+from . import manejador_direccion_json
 
 def guardar_bien(bien: dict, formato: str) -> None:
     if formato == "CSV":
@@ -13,15 +13,15 @@ def guardar_bien(bien: dict, formato: str) -> None:
 
 def guardar_cliente(cliente: dict, formato: str) -> None:
     if formato == "CSV":
-        manejador_cliente_csv.guardar_bienes(cliente)
+        manejador_cliente_csv.guardar_clientes(cliente)
     elif formato == "JSON":
-        manejador_cliente_json.guardar_bienes(cliente)
+        manejador_cliente_json.guardar_clientes(cliente)
 
 def guardar_direccion(direccion: dict, formato: str) -> None:
     if formato == "CSV":
-        manejador_direccion_csv.guardar_bienes(direccion)
+        manejador_direccion_csv.guardar_direcciones(direccion)
     elif formato == "JSON":
-        manejador_direccion_json.guardar_bienes(direccion)
+        manejador_direccion_json.guardar_direcciones(direccion)
 
 
 def generar_dict_bienes(formato: str) -> dict:

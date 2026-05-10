@@ -57,7 +57,7 @@ def formulario_captura_bien(ventana: Tk) -> None:
     chk = Checkbutton(form_bien, text="Mantener datos", variable=chk_mantener)
     chk.grid(row=7, column=1, sticky="w")
 
-    btn_enviar = Button(form_bien, text="Registrar bien", command=lambda: registrar_bien(txt_id, txt_desc, txt_modelo, txt_valor, combo, fmt_combo,chk_mantener))
+    btn_enviar = Button(form_bien, text="Registrar bien", command=lambda: registrar_bien(txt_id, txt_desc, txt_modelo, txt_valor, combo, fmt_combo, chk_mantener))
     btn_enviar.grid(row=8, column=1, sticky="w")
     
     btn_regresar = Button(form_bien, text="Regresar", command=lambda: regresar_menu_principal(ventana, form_bien))
@@ -85,8 +85,8 @@ def registrar_bien(txt_id: Entry, txt_desc: Entry, txt_modelo: Entry, txt_valor:
     bien = crea_bien(id, desc, modelo, precio, estatus)
     guardar_bien(bien, formato)
 
-    messagebox.showinfo("Producto agregado", f"{desc} registrado correctamente.")
-    registrarEvento(f"ha registrado el producto: ID: {id}, Desc: {desc}, Modelo: {modelo}, Valor: {valor}, Estatus: {estatus} satisfactoriamente.")
+    messagebox.showinfo("Producto registrado", f"{desc} registrado correctamente.")
+    registrarEvento(f"ha registrado un producto satisfactoriamente.")
     
     if not persistencia:
         txt_id.delete(0, "end")

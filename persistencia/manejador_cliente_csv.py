@@ -1,6 +1,6 @@
 from csv import writer, reader
 
-def guardar_cliente(cliente: dict) -> None:
+def guardar_clientes(cliente: dict) -> None:
     with open("clientes.csv", "a", newline="", encoding="utf-8") as archivo:
         escritor = writer(archivo)
         escritor.writerow([
